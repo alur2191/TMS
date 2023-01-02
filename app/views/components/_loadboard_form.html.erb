@@ -1,0 +1,35 @@
+<%= form_for(@newLoadboard) do |f| %>
+
+<div class="row">
+    <div class="col-xs-2">
+        <%= f.label :company %><br />
+        <%= f.text_field :company, autofocus: true %>
+    </div>
+    <div class="col-xs-2">
+        <%= f.label :dispatcher %><br />
+        <%= f.text_field :dispatcher %>
+    </div>
+    <div class="col-xs-2">
+        <%= f.label :driver %><br />
+        <%= collection_select( :loadboard, :driver_id, Driver.all, :id, :name, {}, { :multiple => false}) %>
+    </div>
+
+    <div class="col-xs-2">
+        <%= f.label :truck %> #<br />
+        <%= collection_select( :loadboard, :truck_id, Truck.all, :id, :truck_number, {}, { :multiple => false}) %>
+    </div>
+    <div class="col-xs-2">
+        <%= f.label :type %><br />
+        <%= f.text_field :load_type %>
+    </div>
+    <div class="col-xs-2">
+        <%= f.label :trailer %> #<br />
+        <%= collection_select( :loadboard, :trailer_id, Trailer.all, :id, :trailer_number, {}, { :multiple => false}) %>
+    </div>
+    </div>
+    
+    <div class="actions" style="padding-top: 10px">
+        <%= f.submit "Add" %>
+    </div>
+
+<% end %>

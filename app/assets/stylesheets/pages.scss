@@ -1,0 +1,19 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.footerDrawer {
+  background-color: #eeeeee;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.footerDrawer .open {
+  background-color: #eeeeee;
+}
+
+.footerDrawer .content {
+  height: 100px;
+  background-color: #cccccc;
+  display: none;
+}

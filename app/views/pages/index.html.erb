@@ -1,0 +1,103 @@
+<div class="row">
+  <div class="col-xs-12">
+      <div class="panel panel-defailt">
+        <div class="panel-body">
+               
+        <table class="table">
+            <thead>
+            <tr>
+              <th><a href="?company">COMPANY <span class="caret"></span></a></th>
+              <th><a>DISPATCHER <span class="caret"></span></a></th>
+              <th><a>DRIVER <span class="caret"></span></a></th>
+              <th><a href="?truck">TRUCK <span class="caret"></span></a></th>
+              <th><a>TYPE <span class="caret"></span></a></th>
+              <th><a>TRAILER <span class="caret"></span></a></th>
+
+            </tr>
+            </thead>
+           <tbody>
+           <% @loadboards.each_with_index do |loadboard| %>
+             <tr>
+               <td><%= loadboard.company %></td>
+               <td><%= loadboard.dispatcher %></td>
+               <td><%= loadboard.driver.name %></td>
+               <td><%= loadboard.truck.truck_number %></td>
+               <td><%= loadboard.load_type %></td>
+               <td><%= loadboard.trailer.trailer_number %></td>
+             </tr>
+           <% end %>
+    
+          </tbody>
+        </table>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Add Driver-->
+
+
+<div id="openModal1" class="modalDialog">
+  <div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Add a driver</h2>
+    <%= render '/components/driver_form' %>
+  
+  </div>
+</div>
+
+<div id="openModal2" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Add a truck</h2>
+    <%= render '/components/truck_form' %>
+</div>
+</div>
+
+<div id="openModal3" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Add a trailer</h2>
+    <%= render '/components/trailer_form' %>
+</div>
+</div>
+
+
+<!--Bottom Panel-->
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Add a load
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+
+        <%= render '/components/loadboard_form' %>
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('#collapseOne').on('show.bs.collapse', function () {    
+    $('.panel-heading').animate({
+        backgroundColor: "#515151"
+    }, 500);   
+})
+
+$('#collapseOne').on('hide.bs.collapse', function () {    
+    $('.panel-heading').animate({
+        backgroundColor: "#00B4FF"
+    }, 500);   
+})
+  
+</script>
+
+<!--Bottom Panel End-->

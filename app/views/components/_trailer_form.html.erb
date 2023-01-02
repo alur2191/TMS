@@ -1,0 +1,29 @@
+<%= form_for(@newTrailer) do |f| %>
+    <div class="row">
+        <div class="col-xs-2 col-sm-offset-1">
+                <%= f.label :trailer_number %><br />
+                <%= f.text_field :trailer_number, autofocus: true %>
+        </div>
+        <div class="col-xs-2">
+                <%= f.label :trailer_type %><br />
+                <%= f.text_field :trailer_type %>
+        </div>
+        <div class="col-xs-2">
+                <%= f.label :license_plate %><br />
+                <%= f.text_field :license_plate %>
+        </div>
+        <div class="col-xs-2">
+                <%= f.label :plate_expiry %><br />
+                <%= f.text_field :plate_expiry %>
+        </div>
+        <div class="col-xs-2">
+                <%= f.label :inspection_expiration %><br />
+                <%= f.text_field :inspection_expiration %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="actions" style="padding-top: 10px; padding-left: 15px">
+            <%= f.submit "Add" %>
+        </div>
+    </div>
+<% end %> 

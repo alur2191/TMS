@@ -1,0 +1,29 @@
+<%= form_for(@newDriver) do |f| %>
+    <div class="row">
+        <div class="col-xs-2 col-sm-offset-1">
+                <%= f.label :name %><br />
+                <%= f.text_field :name, autofocus: true %>
+        </div>
+        <div class="col-xs-2">
+                <%= f.label :driver_type %><br />
+                <%= f.text_field :driver_type %>
+        </div>
+        <div class="col-xs-2">
+                <%= f.label :phone %><br />
+                <%= f.text_field :phone %>
+        </div>
+        <div class="col-xs-2">
+                <%= f.label :email %><br />
+                <%= f.text_field :email %>
+        </div>
+        <div class="col-xs-2">
+                <%= f.label :address %><br />
+                <%= f.text_field :address %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="actions" style="padding-top: 10px; padding-left: 15px">
+            <%= f.submit "Add" %>
+        </div>
+    </div>
+<% end %> 
